@@ -27,9 +27,9 @@ class IndexMigrationChange extends MigrationChangeBase implements JsonWriter, Ch
     /**
      * Get new migration change from the given index
      *
-     * @param Renepardon\CodeGenerator\Models\Index $index
+     * @param \Renepardon\CodeGenerator\Models\Index $index
      *
-     * @return Renepardon\CodeGenerator\Models\IndexMigrationChange
+     * @return \Renepardon\CodeGenerator\Models\IndexMigrationChange
      */
     public static function getAdded(Index $index)
     {
@@ -43,9 +43,9 @@ class IndexMigrationChange extends MigrationChangeBase implements JsonWriter, Ch
     /**
      * Get new migration change from the given index
      *
-     * @param Renepardon\CodeGenerator\Models\Index $index
+     * @param \Renepardon\CodeGenerator\Models\Index $index
      *
-     * @return Renepardon\CodeGenerator\Models\IndexMigrationChange
+     * @return \Renepardon\CodeGenerator\Models\IndexMigrationChange
      */
     public static function getDeleted(Index $index)
     {
@@ -60,10 +60,10 @@ class IndexMigrationChange extends MigrationChangeBase implements JsonWriter, Ch
     /**
      * Get the migration change after comparing two given fields
      *
-     * @param Renepardon\CodeGenerator\Models\Field $fieldA
-     * @param Renepardon\CodeGenerator\Models\Field $fieldB
+     * @param \Renepardon\CodeGenerator\Models\Field $fieldA
+     * @param \Renepardon\CodeGenerator\Models\Field $fieldB
      *
-     * @return Renepardon\CodeGenerator\Models\FieldMigrationChange
+     * @return \Renepardon\CodeGenerator\Models\FieldMigrationChange
      */
     public static function compare(Field $fieldA, Field $fieldB)
     {

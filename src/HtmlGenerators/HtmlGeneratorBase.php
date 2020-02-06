@@ -57,7 +57,7 @@ abstract class HtmlGeneratorBase
     /**
      * Gets an instance of ViewLabelsGenerator
      *
-     * @return Renepardon\CodeGenerator\Support\ViewLabelsGenerator
+     * @return \Renepardon\CodeGenerator\Support\ViewLabelsGenerator
      */
     abstract protected function getViewLabelsGenerator();
 
@@ -104,8 +104,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets creates an select menu html field for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field            $field
-     * @param Renepardon\CodeGeneraotor\Support\ValidationParser $parser
+     * @param \Renepardon\CodeGeneraotor\Support\Field            $field
+     * @param \Renepardon\CodeGeneraotor\Support\ValidationParser $parser
      *
      * @return string
      */
@@ -187,7 +187,7 @@ abstract class HtmlGeneratorBase
     /**
      * It gets converts an array to a stringbase array for the views.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return string
      */
@@ -196,7 +196,7 @@ abstract class HtmlGeneratorBase
     /**
      * Gets the selected value for a menu.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return string
      */
@@ -214,7 +214,7 @@ abstract class HtmlGeneratorBase
     /**
      * Gets the field value accesor.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field $field
+     * @param \Renepardon\CodeGeneraotor\Support\Field $field
      *
      * @return string
      */
@@ -248,7 +248,7 @@ abstract class HtmlGeneratorBase
     /**
      * Gets the fields accessor
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field $field
+     * @param \Renepardon\CodeGeneraotor\Support\Field $field
      *
      * @return string
      */
@@ -266,7 +266,7 @@ abstract class HtmlGeneratorBase
     /**
      * Gets the fields item accessor
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field $field
+     * @param \Renepardon\CodeGeneraotor\Support\Field $field
      *
      * @return string
      */
@@ -283,8 +283,8 @@ abstract class HtmlGeneratorBase
     /**
      * Get the placeholder attribute for a menu.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $placeholder
-     * @param string                                $name
+     * @param \Renepardon\CodeGenerator\Models\Label $placeholder
+     * @param string                                 $name
      *
      * @return string
      */
@@ -293,8 +293,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets creates an checkbox/radio button html field for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field            $field
-     * @param Renepardon\CodeGeneraotor\Support\ValidationParser $parser
+     * @param \Renepardon\CodeGeneraotor\Support\Field            $field
+     * @param \Renepardon\CodeGeneraotor\Support\ValidationParser $parser
      *
      * @return string
      */
@@ -324,9 +324,9 @@ abstract class HtmlGeneratorBase
     /**
      * Gets creates a checkbox or radio button html field for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field            $field
-     * @param Renepardon\CodeGeneraotor\Support\Label            $option
-     * @param Renepardon\CodeGeneraotor\Support\ValidationParser $parser
+     * @param \Renepardon\CodeGeneraotor\Support\Field            $field
+     * @param \Renepardon\CodeGeneraotor\Support\Label            $option
+     * @param \Renepardon\CodeGeneraotor\Support\ValidationParser $parser
      *
      * @return string
      */
@@ -405,9 +405,9 @@ abstract class HtmlGeneratorBase
     /**
      * Replace the CssClass fo the given stub.
      *
-     * @param string                                $stub
-     * @param Renepardon\CodeGenerator\Models\Label $label
-     * @param string                                $class
+     * @param string                                 $stub
+     * @param \Renepardon\CodeGenerator\Models\Label $label
+     * @param string                                 $class
      *
      * @return $this
      */
@@ -505,8 +505,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets title to display from a given label.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $label
-     * @param bool                                  $raw
+     * @param \Renepardon\CodeGenerator\Models\Label $label
+     * @param bool                                   $raw
      *
      * @return $this
      */
@@ -522,8 +522,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets title in trans() method.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $label
-     * @param bool                                  $raw
+     * @param \Renepardon\CodeGenerator\Models\Label $label
+     * @param bool                                   $raw
      *
      * @return string
      */
@@ -537,8 +537,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets a plain title from a given label.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $label
-     * @param bool                                  $raw
+     * @param \Renepardon\CodeGenerator\Models\Label $label
+     * @param bool                                   $raw
      *
      * @return string
      */
@@ -547,9 +547,9 @@ abstract class HtmlGeneratorBase
     /**
      * Wraps a field with a wrapper template
      *
-     * @param string                                  $fieldStub
-     * @param Renepardon\CodeGeneraotor\Support\Field $field
-     * @param bool                                    $standardLabel
+     * @param string                                   $fieldStub
+     * @param \Renepardon\CodeGeneraotor\Support\Field $field
+     * @param bool                                     $standardLabel
      *
      * @return $this
      */
@@ -644,7 +644,7 @@ abstract class HtmlGeneratorBase
     /**
      * Creates html label from a given field
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return string
      */
@@ -660,8 +660,8 @@ abstract class HtmlGeneratorBase
     /**
      * Creates html label.
      *
-     * @param string                                $name
-     * @param Renepardon\CodeGenerator\Models\Label $label
+     * @param string                                 $name
+     * @param \Renepardon\CodeGenerator\Models\Label $label
      *
      * @return string
      */
@@ -678,9 +678,9 @@ abstract class HtmlGeneratorBase
     /**
      * Replace the fieldTitle fo the given stub.
      *
-     * @param string                                $stub
-     * @param Renepardon\CodeGenerator\Models\Label $label
-     * @param string                                $fieldTitle
+     * @param string                                 $stub
+     * @param \Renepardon\CodeGenerator\Models\Label $label
+     * @param string                                 $fieldTitle
      *
      * @return $this
      */
@@ -694,7 +694,7 @@ abstract class HtmlGeneratorBase
     /**
      * Creates helper block
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field $field
+     * @param \Renepardon\CodeGeneraotor\Support\Field $field
      *
      * @return string
      */
@@ -710,8 +710,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets creates an textarea html field for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field            $field
-     * @param Renepardon\CodeGeneraotor\Support\ValidationParser $parser
+     * @param \Renepardon\CodeGeneraotor\Support\Field            $field
+     * @param \Renepardon\CodeGeneraotor\Support\ValidationParser $parser
      *
      * @return string
      */
@@ -893,7 +893,7 @@ abstract class HtmlGeneratorBase
     /**
      * Get the placeholder attribute.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $placeholder
+     * @param \Renepardon\CodeGenerator\Models\Label $placeholder
      *
      * @return string
      */
@@ -902,8 +902,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets creates an password html5 field for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field            $field
-     * @param Renepardon\CodeGeneraotor\Support\ValidationParser $parser
+     * @param \Renepardon\CodeGeneraotor\Support\Field            $field
+     * @param \Renepardon\CodeGeneraotor\Support\ValidationParser $parser
      *
      * @return string
      */
@@ -932,7 +932,7 @@ abstract class HtmlGeneratorBase
     /**
      * Gets creates an password html5 field for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field $field
+     * @param \Renepardon\CodeGeneraotor\Support\Field $field
      *
      * @return string
      */
@@ -952,7 +952,7 @@ abstract class HtmlGeneratorBase
     /**
      * Replaces field's common templates
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */
@@ -983,8 +983,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets a value accessor for the field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $view
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $view
      *
      * @return string
      */
@@ -998,7 +998,7 @@ abstract class HtmlGeneratorBase
     /**
      * Gets a rangeselector element for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field $field
+     * @param \Renepardon\CodeGeneraotor\Support\Field $field
      *
      * @return string
      */
@@ -1035,7 +1035,7 @@ abstract class HtmlGeneratorBase
     /**
      * Gets a selectmonth element for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field $field
+     * @param \Renepardon\CodeGeneraotor\Support\Field $field
      *
      * @return string
      */
@@ -1055,8 +1055,8 @@ abstract class HtmlGeneratorBase
     /**
      * Gets creates an standard html5 field for a given field.
      *
-     * @param Renepardon\CodeGeneraotor\Support\Field            $field
-     * @param Renepardon\CodeGeneraotor\Support\ValidationParser $parser
+     * @param \Renepardon\CodeGeneraotor\Support\Field            $field
+     * @param \Renepardon\CodeGeneraotor\Support\ValidationParser $parser
      *
      * @return string
      */

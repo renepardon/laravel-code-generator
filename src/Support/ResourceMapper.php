@@ -195,7 +195,7 @@ class ResourceMapper
     /**
      * Gets the resources
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     protected function getResources($content = '')
     {

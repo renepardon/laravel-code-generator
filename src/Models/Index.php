@@ -109,6 +109,18 @@ class Index implements JsonWriter
     }
 
     /**
+     * Adds a column to the index
+     *
+     * @var void
+     */
+    public function addColumn($name)
+    {
+        if (! in_array($name, $this->columns)) {
+            $this->columns[] = $name;
+        }
+    }
+
+    /**
      * Checks if the type is a valid type.
      *
      * @var bool
@@ -153,18 +165,6 @@ class Index implements JsonWriter
     {
         foreach ($names as $name) {
             $this->addColumn($name);
-        }
-    }
-
-    /**
-     * Adds a column to the index
-     *
-     * @var void
-     */
-    public function addColumn($name)
-    {
-        if (! in_array($name, $this->columns)) {
-            $this->columns[] = $name;
         }
     }
 

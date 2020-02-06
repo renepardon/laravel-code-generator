@@ -143,7 +143,7 @@ class CreateApiControllerCommand extends ControllerCommandBase
     /**
      * Executes the command that generates a migration.
      *
-     * @param Renepardon\CodeGenerator\Models\ScaffoldInput $input
+     * @param \Renepardon\CodeGenerator\Models\ScaffoldInput $input
      *
      * @return $this
      */

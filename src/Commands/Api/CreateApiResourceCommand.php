@@ -147,7 +147,7 @@ class CreateApiResourceCommand extends Command
     /**
      * Checks for basic errors
      *
-     * @param  Renepardon\CodeGenerator\Models\Resource $resource
+     * @param \Renepardon\CodeGenerator\Models\Resource $resource
      * @param string                                    $destenationFile
      * @param bool                                      $isCollection
      *

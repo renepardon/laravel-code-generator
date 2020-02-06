@@ -96,8 +96,8 @@ class ControllerRequestCommandBase extends Command
     /**
      * Gets laravel ready field validation format for a given field
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $customRules
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $customRules
      *
      * @return string
      */

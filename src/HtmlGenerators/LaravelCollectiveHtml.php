@@ -72,8 +72,8 @@ class LaravelCollectiveHtml extends HtmlGeneratorBase
     /**
      * Get the placeholder attribute for a menu.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $placeholder
-     * @param string                                $name
+     * @param \Renepardon\CodeGenerator\Models\Label $placeholder
+     * @param string                                 $name
      *
      * @return string
      */
@@ -85,7 +85,7 @@ class LaravelCollectiveHtml extends HtmlGeneratorBase
     /**
      * Get the placeholder attribute.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $placeholder
+     * @param \Renepardon\CodeGenerator\Models\Label $placeholder
      *
      * @return string
      */
@@ -109,7 +109,7 @@ class LaravelCollectiveHtml extends HtmlGeneratorBase
     /**
      * It gets converts an array to a string based array for the views.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return string
      */
@@ -125,8 +125,8 @@ class LaravelCollectiveHtml extends HtmlGeneratorBase
     /**
      * Gets a plain title from a given label.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $label
-     * @param bool                                  $raw
+     * @param \Renepardon\CodeGenerator\Models\Label $label
+     * @param bool                                   $raw
      *
      * @return string
      */
@@ -288,7 +288,7 @@ class LaravelCollectiveHtml extends HtmlGeneratorBase
     /**
      * Gets an instance of ViewLabelsGenerator
      *
-     * @return Renepardon\CodeGenerator\Support\ViewLabelsGenerator
+     * @return \Renepardon\CodeGenerator\Support\ViewLabelsGenerator
      */
     protected function getViewLabelsGenerator()
     {

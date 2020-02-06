@@ -979,7 +979,7 @@ class CreateControllerCommand extends ControllerCommandBase
     /**
      * Gets the relation accessor for the given foreign renationship.
      *
-     * @param Renepardon\CodeGenerator\Models\ForeignRelationship $collection
+     * @param \Renepardon\CodeGenerator\Models\ForeignRelationship $collection
      *
      * @return string
      */

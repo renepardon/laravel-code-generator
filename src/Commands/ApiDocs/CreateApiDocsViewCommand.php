@@ -172,8 +172,8 @@ class CreateApiDocsViewCommand extends Command
     /**
      * Build the model class with the given name.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource $resource
-     * @param string                                   $destenationFile
+     * @param \Renepardon\CodeGenerator\Models\Resource $resource
+     * @param string                                    $destenationFile
      *
      * @return bool
      */

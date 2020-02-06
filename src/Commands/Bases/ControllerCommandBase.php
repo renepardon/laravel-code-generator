@@ -47,7 +47,7 @@ abstract class ControllerCommandBase extends ControllerRequestCommandBase
     /**
      * Build the model class with the given name.
      *
-     * @param  Renepardon\CodeGenerator\Models\Resource $resource
+     * @param \Renepardon\CodeGenerator\Models\Resource $resource
      * @param string                                    $destenationFile
      *
      * @return bool
@@ -232,9 +232,9 @@ abstract class ControllerCommandBase extends ControllerRequestCommandBase
     /**
      * Processes common tasks
      *
-     * @param object                                   $input
-     * @param Renepardon\CodeGenerator\Models\Resource $resource
-     * @param string                                   $stub
+     * @param object                                    $input
+     * @param \Renepardon\CodeGenerator\Models\Resource $resource
+     * @param string                                    $stub
      *
      * @return $this
      */
@@ -316,7 +316,7 @@ abstract class ControllerCommandBase extends ControllerRequestCommandBase
     /**
      * Calls the create:form-request command
      *
-     * @param  Renepardon\CodeGenerator\Models\ViewInput $input
+     * @param \Renepardon\CodeGenerator\Models\ViewInput $input
      *
      * @return $this
      */
@@ -907,7 +907,7 @@ abstract class ControllerCommandBase extends ControllerRequestCommandBase
     /**
      * Gets the relation accessor for the given foreign renationship.
      *
-     * @param Renepardon\CodeGenerator\Models\ForeignRelationship $collection
+     * @param \Renepardon\CodeGenerator\Models\ForeignRelationship $collection
      *
      * @return string
      */

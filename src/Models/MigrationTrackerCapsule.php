@@ -93,7 +93,7 @@ class MigrationTrackerCapsule implements JsonWriter
      * @param string $resourceFile
      * @param array  $migrationProperties
      *
-     * @return Renepardon\CodeGenerator\Models\MigrationTrackerCapsule
+     * @return \Renepardon\CodeGenerator\Models\MigrationTrackerCapsule
      */
     public static function get($tableName, $modelName, $resourceFile, array $migrationProperties = [])
     {
@@ -109,11 +109,11 @@ class MigrationTrackerCapsule implements JsonWriter
      * Get the difference between a givin resource and the
      * resource in the current migration
      *
-     * @param Renepardon\CodeGenerator\Models\Resource       $resourceA
-     * @param Renepardon\CodeGenerator\Models\Resource       $resourceB
-     * @param Renepardon\CodeGenerator\Models\MigrationInput $input
+     * @param \Renepardon\CodeGenerator\Models\Resource       $resourceA
+     * @param \Renepardon\CodeGenerator\Models\Resource       $resourceB
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput $input
      *
-     * @return Renepardon\CodeGenerator\Models\MigrationChangeCapsule
+     * @return \Renepardon\CodeGenerator\Models\MigrationChangeCapsule
      */
     public function getDelta(Resource $resourceA, Resource $resourceB, MigrationInput $input)
     {
@@ -233,7 +233,7 @@ class MigrationTrackerCapsule implements JsonWriter
     /**
      * Update the last migration
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationCapsule $migration
+     * @param \Renepardon\CodeGenerator\Models\MigrationCapsule $migration
      *
      * @return void
      */
@@ -323,7 +323,7 @@ class MigrationTrackerCapsule implements JsonWriter
      * Gets the last before current migration in the
      * collection which is the one we are using
      *
-     * @return mix (null || Renepardon\CodeGenerator\Models\MigrationCapsule)
+     * @return mix (null || \Renepardon\CodeGenerator\Models\MigrationCapsule)
      */
     public function getMigrationBeforeCurrent()
     {
@@ -401,7 +401,7 @@ class MigrationTrackerCapsule implements JsonWriter
     /**
      * Gets the last migration in the collection which is the one we are using
      *
-     * @return mix (null || Renepardon\CodeGenerator\Models\MigrationCapsule)
+     * @return mix (null || \Renepardon\CodeGenerator\Models\MigrationCapsule)
      */
     public function getCurrentMigration()
     {

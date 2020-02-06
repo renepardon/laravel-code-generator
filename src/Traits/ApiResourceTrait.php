@@ -168,8 +168,8 @@ trait ApiResourceTrait
     /**
      * Gets the field in array ready format.
      *
-     * @param array $fields
-     * @param bool $forApiCollectionClass
+     * @param array  $fields
+     * @param bool   $forApiCollectionClass
      * @param string $prefix
      *
      * @return string

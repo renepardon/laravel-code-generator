@@ -69,7 +69,7 @@ class FieldTransformer
     }
 
     /**
-     * It transfres a gining array to a collection of field
+     * It transfers a gining array to a collection of field
      *
      * @param string $str
      * @param string $localeGroup
@@ -77,6 +77,7 @@ class FieldTransformer
      * @param bool   $isReadOnly
      *
      * @return array
+     * @throws \Exception
      */
     public static function fromString($str, $localeGroup = 'generic', array $languages = [], $isReadOnly = false)
     {
@@ -86,6 +87,7 @@ class FieldTransformer
         // name:a;html-type:select;options:first|second|third|fourth
         $fields = [];
         $fieldNames = array_unique(Arr::fromString($str));
+
         foreach ($fieldNames as $fieldName) {
             $field = [];
 
@@ -110,7 +112,6 @@ class FieldTransformer
                         $field[$key] = $value;
                     }
 
-                    $field[$key] = $value;
                     if ($key == 'options') {
                         $options = Arr::fromString($value, '|');
 
@@ -143,6 +144,7 @@ class FieldTransformer
      * @param bool   $isReadOnly
      *
      * @return array
+     * @throws \Exception
      */
     public static function fromArray(array $collection, $localeGroup, array $languages = [], $isReadOnly = false)
     {

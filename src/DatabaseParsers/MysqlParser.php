@@ -110,7 +110,7 @@ class MysqlParser extends ParserBase
     /**
      * Get a corresponding relation to a given table name, foreign column and local column.
      *
-     * @return Renepardon\CodeGenerator\Models\ForeignRelationship
+     * @return \Renepardon\CodeGenerator\Models\ForeignRelationship
      */
     protected function getRealtion($foreignTableName, $foreignColumn, $localColumn, $selfReferences)
     {
@@ -202,7 +202,7 @@ class MysqlParser extends ParserBase
      *
      * @param object $column
      *
-     * @return Renepardon\CodeGenerator\Model\Field;
+     * @return \Renepardon\CodeGenerator\Model\Field;
      */
     protected function getTransfredFields(array $columns)
     {
@@ -305,8 +305,8 @@ class MysqlParser extends ParserBase
     /**
      * Set the options for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $type
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $type
      *
      * @return array
      */
@@ -354,7 +354,7 @@ class MysqlParser extends ParserBase
      *
      * @param string $name
      *
-     * @return null || Renepardon\CodeGenerator\Models\ForeignConstraint
+     * @return null || \Renepardon\CodeGenerator\Models\ForeignConstraint
      */
     protected function getForeignConstraint($name)
     {

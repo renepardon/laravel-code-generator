@@ -85,7 +85,7 @@ abstract class ParserBase
     /**
      * Gets the final resource.
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     public function getResourceAsJson()
     {
@@ -97,7 +97,7 @@ abstract class ParserBase
     /**
      * Gets the final resource.
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     public function getResource()
     {
@@ -164,7 +164,7 @@ abstract class ParserBase
     /**
      * Check if the given fields contains autoManagedFields
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     protected function containsUpdateAtAndCreatedAt($fields)
     {
@@ -192,8 +192,8 @@ abstract class ParserBase
     /**
      * Set the html type for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $type
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $type
      *
      * @return $this
      */
@@ -209,8 +209,8 @@ abstract class ParserBase
     /**
      * Get the html type for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $type
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $type
      *
      * @return string
      */

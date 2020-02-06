@@ -112,13 +112,14 @@ class Str extends LaravelStr
      *
      * @param string $str
      *
-     * @return array
+     * @return bool
      */
-    public static function stringToBool($str)
+    public static function stringToBool($str): bool
     {
         if (is_bool($str)) {
             return $str;
         }
+
         return in_array(strtolower($str), ['true', 'yes', '1', 'valid', 'correct']);
     }
 
@@ -270,7 +271,7 @@ class Str extends LaravelStr
     public static function split($delimiter, $string)
     {
         if (is_array($delimiter)) {
-            $pattern = sprintf('/ (%s) /', implode('|', $delimiter));
+            $pattern = sprintf('/(%s)/', implode('|', $delimiter));
 
             return preg_split($pattern, $string);
         }

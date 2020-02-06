@@ -83,7 +83,7 @@ class CreateScaffoldCommand extends CreateScaffoldCommandBase
     /**
      * Gets a clean user inputs.
      *
-     * @return Renepardon\CodeGenerator\Models\ScaffoldInput
+     * @return \Renepardon\CodeGenerator\Models\ScaffoldInput
      */
     protected function getCommandInput()
     {
@@ -100,7 +100,7 @@ class CreateScaffoldCommand extends CreateScaffoldCommandBase
     /**
      * Executes the command that generates all the views.
      *
-     * @param Renepardon\CodeGenerator\Models\ScaffoldInput $input
+     * @param \Renepardon\CodeGenerator\Models\ScaffoldInput $input
      *
      * @return $this
      */
@@ -127,8 +127,8 @@ class CreateScaffoldCommand extends CreateScaffoldCommandBase
     /**
      * Executes the command that generates the routes.
      *
-     * @param Renepardon\CodeGenerator\Models\ScaffoldInput $input
-     * @param Renepardon\CodeGenerator\Models\Field         $primaryField
+     * @param \Renepardon\CodeGenerator\Models\ScaffoldInput $input
+     * @param \Renepardon\CodeGenerator\Models\Field         $primaryField
      *
      * @return $this
      */
@@ -154,7 +154,7 @@ class CreateScaffoldCommand extends CreateScaffoldCommandBase
     /**
      * Executes the command that generates the controller.
      *
-     * @param Renepardon\CodeGenerator\Models\ScaffoldInput $input
+     * @param \Renepardon\CodeGenerator\Models\ScaffoldInput $input
      *
      * @return $this
      */

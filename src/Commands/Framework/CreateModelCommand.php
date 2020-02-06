@@ -244,7 +244,7 @@ class CreateModelCommand extends Command
     /**
      * Creates the code for a relationship.
      *
-     * @param Renepardon\CodeGenerator\Models\ForeignRelation $relation
+     * @param \Renepardon\CodeGenerator\Models\ForeignRelation $relation
      *
      * @return string
      */
@@ -327,7 +327,7 @@ class CreateModelCommand extends Command
     /**
      * Gets the return type for the given relationship
      *
-     * @param Renepardon\CodeGenerator\Models\ForeignRelation $relation
+     * @param \Renepardon\CodeGenerator\Models\ForeignRelation $relation
      *
      * @return string
      */

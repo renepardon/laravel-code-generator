@@ -438,7 +438,7 @@ trait CommonCommand
      *
      * @param array $fields
      *
-     * @return Renepardon\CodeGenerator\Models\Field
+     * @return \Renepardon\CodeGenerator\Models\Field
      */
     protected function getPrimaryField(array $fields)
     {
@@ -466,7 +466,7 @@ trait CommonCommand
      *
      * @param array $fields
      *
-     * @return Renepardon\CodeGenerator\Models\Field || null
+     * @return \Renepardon\CodeGenerator\Models\Field || null
      */
     protected function getHeaderField(array $fields)
     {

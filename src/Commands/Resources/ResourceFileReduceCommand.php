@@ -111,7 +111,7 @@ class ResourceFileReduceCommand extends ResourceFileCommandBase
     /**
      * Reduces the fields from a given resource.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource &$resource
+     * @param \Renepardon\CodeGenerator\Models\Resource &$resource
      * @param array $$fieldNames
      *
      * @return mixed
@@ -137,8 +137,8 @@ class ResourceFileReduceCommand extends ResourceFileCommandBase
     /**
      * Reduces the relations from a given resource.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource &$resource
-     * @param array                                     $relationNames
+     * @param \Renepardon\CodeGenerator\Models\Resource &$resource
+     * @param array                                      $relationNames
      *
      * @return mixed
      */
@@ -166,8 +166,8 @@ class ResourceFileReduceCommand extends ResourceFileCommandBase
     /**
      * Reduces the indexes from a given resource.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource &$resource
-     * @param array                                     $indexNames
+     * @param \Renepardon\CodeGenerator\Models\Resource &$resource
+     * @param array                                      $indexNames
      *
      * @return mixed
      */

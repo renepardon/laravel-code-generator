@@ -11,21 +11,21 @@ class FieldMigrationChange extends MigrationChangeBase implements JsonWriter, Ch
     /**
      * The field to be deleted or added
      *
-     * @var Renepardon\CodeGenerator\Models\Field
+     * @var \Renepardon\CodeGenerator\Models\Field
      */
     public $field;
 
     /**
      * The field to be changed from
      *
-     * @var Renepardon\CodeGenerator\Models\Field
+     * @var \Renepardon\CodeGenerator\Models\Field
      */
     public $fromField;
 
     /**
      * The field to be changed to
      *
-     * @var Renepardon\CodeGenerator\Models\Field
+     * @var \Renepardon\CodeGenerator\Models\Field
      */
     public $toField;
 
@@ -41,9 +41,9 @@ class FieldMigrationChange extends MigrationChangeBase implements JsonWriter, Ch
     /**
      * Get new migration change from the given field
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
-     * @return Renepardon\CodeGenerator\Models\FieldMigrationChange
+     * @return \Renepardon\CodeGenerator\Models\FieldMigrationChange
      */
     public static function getAdded(Field $field)
     {
@@ -57,9 +57,9 @@ class FieldMigrationChange extends MigrationChangeBase implements JsonWriter, Ch
     /**
      * Get new migration change from the given field
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
-     * @return Renepardon\CodeGenerator\Models\FieldMigrationChange
+     * @return \Renepardon\CodeGenerator\Models\FieldMigrationChange
      */
     public static function getDeleted(Field $field)
     {
@@ -74,10 +74,10 @@ class FieldMigrationChange extends MigrationChangeBase implements JsonWriter, Ch
     /**
      * Get the migration change after comparing two given fields
      *
-     * @param Renepardon\CodeGenerator\Models\Field $fieldA
-     * @param Renepardon\CodeGenerator\Models\Field $fieldB
+     * @param \Renepardon\CodeGenerator\Models\Field $fieldA
+     * @param \Renepardon\CodeGenerator\Models\Field $fieldB
      *
-     * @return Renepardon\CodeGenerator\Models\FieldMigrationChange
+     * @return \Renepardon\CodeGenerator\Models\FieldMigrationChange
      */
     public static function compare(Field $fieldA, Field $fieldB)
     {

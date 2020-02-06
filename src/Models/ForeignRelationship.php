@@ -2,10 +2,11 @@
 
 namespace Renepardon\CodeGenerator\Models;
 
-use DB;
+use Illuminate\Support\Facades\DB;
 use Exception;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Model;
+use OutOfRangeException;
 use Renepardon\CodeGenerator\Support\Arr;
 use Renepardon\CodeGenerator\Support\Config;
 use Renepardon\CodeGenerator\Support\Contracts\JsonWriter;
@@ -106,9 +107,10 @@ class ForeignRelationship implements JsonWriter
      *
      * @param string $rawRelation
      *
-     * @return null | Renepardon\CodeGenerator\Model\ForeignRelationship
+     * @return \Renepardon\CodeGenerator\Models\ForeignRelationship|null
+     * @throws \Exception
      */
-    public static function fromString($rawRelation)
+    public static function fromString($rawRelation):?ForeignRelationship
     {
         //name:assets;type:hasMany;params:App\\Models\\Asset|category_id|id,
         // expected string
@@ -117,6 +119,7 @@ class ForeignRelationship implements JsonWriter
 
         $parts = explode(';', $rawRelation);
         $collection = [];
+
         foreach ($parts as $part) {
             if (! str_contains($part, ':')) {
                 continue;
@@ -160,16 +163,16 @@ class ForeignRelationship implements JsonWriter
      *
      * @param array $options
      *
-     * @throws Exception
-     *
-     * @return mix (null | Renepardon\CodeGenerator\Model\ForeignRelationship)
+     * @return \Renepardon\CodeGenerator\Models\ForeignRelationship|null
+     * @throws \Exception
      */
-    public static function get(array $options)
+    public static function get(array $options): ?ForeignRelationship
     {
         if (! self::isValid($options)) {
             if (count($options) >= 3) {
                 $values = array_values($options);
                 $field = isset($values[3]) ? $values[3] : null;
+
                 return new ForeignRelationship(
                     $values[1],
                     $values[2],
@@ -197,9 +200,9 @@ class ForeignRelationship implements JsonWriter
      * @param string $fieldName
      * @param string $modelPath
      *
-     * @return null | Renepardon\CodeGenerator\Model\ForeignRelationship
+     * @return \Renepardon\CodeGenerator\Models\ForeignRelationship|null
      */
-    public static function predict($fieldName, $modelPath)
+    public static function predict($fieldName, $modelPath):?ForeignRelationship
     {
         $patterns = Config::getKeyPatterns();
 
@@ -484,7 +487,7 @@ class ForeignRelationship implements JsonWriter
     /**
      * Gets the foreign model fields from resource file
      *
-     * @return mix (null | Renepardon\CodeGenerator\Models\Resource)
+     * @return mix (null | \Renepardon\CodeGenerator\Models\Resource)
      */
     protected function getForeignResource()
     {

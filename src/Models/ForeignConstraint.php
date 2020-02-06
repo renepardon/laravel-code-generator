@@ -97,7 +97,7 @@ class ForeignConstraint implements JsonWriter
      * @param array  $properties
      * @param string $fieldName
      *
-     * @return null || Renepardon\CodeGenerator\Models\ForeignConstraint
+     * @return null || \Renepardon\CodeGenerator\Models\ForeignConstraint
      */
     public static function fromArray(array $constraint, $fieldName)
     {
@@ -122,7 +122,7 @@ class ForeignConstraint implements JsonWriter
     /**
      * Get a foreign relation.
      *
-     * @return Renepardon\CodeGenerator\Models\ForeignRelatioship
+     * @return \Renepardon\CodeGenerator\Models\ForeignRelatioship
      */
     public function getForeignRelation()
     {

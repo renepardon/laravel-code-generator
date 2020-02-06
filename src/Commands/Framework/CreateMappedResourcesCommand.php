@@ -133,8 +133,8 @@ class CreateMappedResourcesCommand extends Command
     /**
      * Gets valid input collection
      *
-     * @param array                                         $object
-     * @param Renepardon\CodeGenerator\Models\ResourceInput $input
+     * @param array                                          $object
+     * @param \Renepardon\CodeGenerator\Models\ResourceInput $input
      *
      * @return array of Renepardon\CodeGenerator\Models\ScaffoldInput
      */
@@ -217,7 +217,7 @@ class CreateMappedResourcesCommand extends Command
     /**
      * Gets a clean user inputs.
      *
-     * @return Renepardon\CodeGenerator\Models\ScaffoldInput
+     * @return \Renepardon\CodeGenerator\Models\ScaffoldInput
      */
     protected function getCommandInput()
     {

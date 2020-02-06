@@ -165,9 +165,9 @@ class ResourceFileFromDatabaseCommand extends ResourceFileCommandBase
     /**
      * Creates a virtual migration in the migration tracker
      *
-     * @param Renepardon\CodeGenerator\Models\Resource $resource
-     * @param string                                   $destenationFile
-     * @param string                                   $tableName
+     * @param \Renepardon\CodeGenerator\Models\Resource $resource
+     * @param string                                    $destenationFile
+     * @param string                                    $tableName
      *
      * @return void
      */
@@ -189,10 +189,10 @@ class ResourceFileFromDatabaseCommand extends ResourceFileCommandBase
     /**
      * Make a migration capsule
      *
-     * @param Renepardon\CodeGenerator\Models\Resource $resource
-     * @param string                                   $tableName
+     * @param \Renepardon\CodeGenerator\Models\Resource $resource
+     * @param string                                    $tableName
      *
-     * @return Renepardon\CodeGenerator\Models\MigrationCapsule
+     * @return \Renepardon\CodeGenerator\Models\MigrationCapsule
      */
     protected function getMigrationCapsule($resource, $tableName)
     {

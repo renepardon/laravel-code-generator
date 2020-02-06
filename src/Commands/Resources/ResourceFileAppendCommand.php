@@ -81,7 +81,7 @@ class ResourceFileAppendCommand extends ResourceFileCreatorCommandBase
     /**
      * Merges the given file's content to the new fields.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource &$resource
+     * @param \Renepardon\CodeGenerator\Models\Resource &$resource
      * @param (object) $input
      *
      * @return int
@@ -108,7 +108,7 @@ class ResourceFileAppendCommand extends ResourceFileCreatorCommandBase
     /**
      * Merges the relation to the existing resources.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource &$resource
+     * @param \Renepardon\CodeGenerator\Models\Resource &$resource
      * @param (object) $input
      *
      * @return int
@@ -144,7 +144,7 @@ class ResourceFileAppendCommand extends ResourceFileCreatorCommandBase
     /**
      * Merges the indexes to the existing resources.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource &$resource
+     * @param \Renepardon\CodeGenerator\Models\Resource &$resource
      * @param (object) $input
      *
      * @return int

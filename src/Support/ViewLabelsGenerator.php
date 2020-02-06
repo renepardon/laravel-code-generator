@@ -114,7 +114,7 @@ class ViewLabelsGenerator
      * @param bool   $isPlain
      * @param string $lang
      *
-     * @return Renepardon\CodeGenerator\Models\Label
+     * @return \Renepardon\CodeGenerator\Models\Label
      */
     protected function makeModelLabel($key, array $properties, $isPlain, $lang)
     {

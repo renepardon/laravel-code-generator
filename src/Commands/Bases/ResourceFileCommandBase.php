@@ -17,7 +17,7 @@ class ResourceFileCommandBase extends Command
      * @param string $file
      * @param array  $languages
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     protected function getResources($file, array $languages = [])
     {

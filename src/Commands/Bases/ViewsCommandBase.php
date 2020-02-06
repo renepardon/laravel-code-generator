@@ -65,8 +65,8 @@ abstract class ViewsCommandBase extends Command
     /**
      * It Replaces the primaryKey, modelNames, routeNames in a given stub
      *
-     * @param string                                    $stub
-     * @param Renepardon\CodeGenerator\Models\ViewInput $input
+     * @param string                                     $stub
+     * @param \Renepardon\CodeGenerator\Models\ViewInput $input
      *
      * @return $this
      */
@@ -103,7 +103,7 @@ abstract class ViewsCommandBase extends Command
      *
      * @param string $file
      * @param bool   $force
-     * @param Renepardon\CodeGenerator\Models\Resource
+     * @param \Renepardon\CodeGenerator\Models\Resource
      *
      * @return bool
      */
@@ -146,6 +146,16 @@ abstract class ViewsCommandBase extends Command
     protected function getViewName()
     {
         return sprintf('%s-view', $this->getViewType());
+    }
+
+    /**
+     * Get the view type
+     *
+     * @return string
+     */
+    protected function getViewType()
+    {
+        return Str::trimEnd($this->getStubName(), '.blade');
     }
 
     /**
@@ -304,16 +314,6 @@ abstract class ViewsCommandBase extends Command
     }
 
     /**
-     * Get the view type
-     *
-     * @return string
-     */
-    protected function getViewType()
-    {
-        return Str::trimEnd($this->getStubName(), '.blade');
-    }
-
-    /**
      * It gets the views destenation path
      *
      * @param $viewsDirectory
@@ -401,7 +401,7 @@ abstract class ViewsCommandBase extends Command
      * @param string $modelName
      * @param string $template
      *
-     * @return Renepardon\CodeGenerator\HtmlGenerators\HtmlGeneratorBase
+     * @return \Renepardon\CodeGenerator\HtmlGenerators\HtmlGeneratorBase
      */
     protected function getHtmlGenerator(array $fields, $modelName, $template)
     {

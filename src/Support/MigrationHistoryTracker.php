@@ -49,7 +49,7 @@ class MigrationHistoryTracker
     /**
      * Gets a migration capsule from the file if any
      *
-     * @return mix (null || Renepardon\CodeGenerator\Models\MigrationTrackerCapsule)
+     * @return mix (null || \Renepardon\CodeGenerator\Models\MigrationTrackerCapsule)
      */
     public function get($tableName)
     {
@@ -132,8 +132,8 @@ class MigrationHistoryTracker
     /**
      * Adds properties to the migration tracker
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationTrackerCapsule
-     * @param Renepardon\CodeGenerator\Models\MigrationCapsule $migration
+     * @param \Renepardon\CodeGenerator\Models\MigrationTrackerCapsule
+     * @param \Renepardon\CodeGenerator\Models\MigrationCapsule $migration
      *
      * @return array
      */

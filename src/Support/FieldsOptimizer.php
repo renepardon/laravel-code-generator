@@ -35,7 +35,7 @@ class FieldsOptimizer
     /**
      * Gets the optimized fields.
      *
-     * @return Renepardon\CodeGenerator\Models\Field
+     * @return \Renepardon\CodeGenerator\Models\Field
      */
     public function getFields()
     {
@@ -66,7 +66,7 @@ class FieldsOptimizer
     /**
      * given a mappers collection, it'll update the the field by making one as primary title
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return bool
      */
@@ -99,7 +99,7 @@ class FieldsOptimizer
     /**
      * It checks if a given field is a primary or not.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return bool
      */
@@ -138,7 +138,7 @@ class FieldsOptimizer
     /**
      * Adds field to the fields collection.
      *
-     * @param Renepardon\CodeGenerator\Model\Field $field
+     * @param \Renepardon\CodeGenerator\Model\Field $field
      *
      * @return void
      */

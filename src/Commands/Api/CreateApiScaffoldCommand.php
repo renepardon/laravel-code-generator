@@ -96,7 +96,7 @@ class CreateApiScaffoldCommand extends CreateScaffoldCommandBase
     /**
      * Gets a clean user inputs.
      *
-     * @return Renepardon\CodeGenerator\Models\ApiScaffoldInput
+     * @return \Renepardon\CodeGenerator\Models\ApiScaffoldInput
      */
     protected function getCommandInput()
     {
@@ -116,9 +116,9 @@ class CreateApiScaffoldCommand extends CreateScaffoldCommandBase
     /**
      * Executes the command that generates the routes.
      *
-     * @param Renepardon\CodeGenerator\Models\ApiScaffoldInput $input
-     * @param Renepardon\CodeGenerator\Models\Field            $primaryField
-     * @param bool                                             $forApi
+     * @param \Renepardon\CodeGenerator\Models\ApiScaffoldInput $input
+     * @param \Renepardon\CodeGenerator\Models\Field            $primaryField
+     * @param bool                                              $forApi
      *
      * @return $this
      */
@@ -168,7 +168,7 @@ class CreateApiScaffoldCommand extends CreateScaffoldCommandBase
     /**
      * Executes the command that generates the controller.
      *
-     * @param Renepardon\CodeGenerator\Models\ApiScaffoldInput $input
+     * @param \Renepardon\CodeGenerator\Models\ApiScaffoldInput $input
      *
      * @return $this
      */
@@ -209,7 +209,7 @@ class CreateApiScaffoldCommand extends CreateScaffoldCommandBase
     /**
      * Executes the command that generates the documentation
      *
-     * @param Renepardon\CodeGenerator\Models\ApiScaffoldInput $input
+     * @param \Renepardon\CodeGenerator\Models\ApiScaffoldInput $input
      *
      * @return $this
      */

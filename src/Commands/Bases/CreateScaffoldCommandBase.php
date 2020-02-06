@@ -16,7 +16,7 @@ class CreateScaffoldCommandBase extends Command
     /**
      * Runs any logic before scaffolding
      *
-     * @param Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
+     * @param \Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class CreateScaffoldCommandBase extends Command
     /**
      * Executes the command that generate fields' file.
      *
-     * @param Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
+     * @param \Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
      *
      * @return $this
      */
@@ -60,7 +60,7 @@ class CreateScaffoldCommandBase extends Command
     /**
      * Executes the command that generate fields' file.
      *
-     * @param Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
+     * @param \Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
      *
      * @return $this
      */
@@ -99,7 +99,7 @@ class CreateScaffoldCommandBase extends Command
     /**
      * Executes the command that generates a migration.
      *
-     * @param Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
+     * @param \Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
      *
      * @return $this
      */
@@ -129,7 +129,7 @@ class CreateScaffoldCommandBase extends Command
     /**
      * Executes the command that generates a language files.
      *
-     * @param Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
+     * @param \Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
      *
      * @return $this
      */
@@ -154,7 +154,7 @@ class CreateScaffoldCommandBase extends Command
     /**
      * Executes the command that generates a model.
      *
-     * @param Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
+     * @param \Renepardon\CodeGenerator\Models\Bases\ScaffoldInputBase $input
      *
      * @return $this
      */
@@ -184,7 +184,7 @@ class CreateScaffoldCommandBase extends Command
     /**
      * Gets a clean user inputs.
      *
-     * @return Renepardon\CodeGenerator\Models\ScaffoldInputBase
+     * @return \Renepardon\CodeGenerator\Models\ScaffoldInputBase
      */
     protected function getCommandInput()
     {

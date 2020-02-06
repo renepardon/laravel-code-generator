@@ -1,6 +1,9 @@
 ## Introduction
 
-Clone of CrestApps laravel-code-generator adjusted for custom requirements
+Clone of CrestApps laravel-code-generator adjusted for custom requirements. For example:
+
+- no backward compatibility checks
+- laravel 6 support
 
 ## Installation
 

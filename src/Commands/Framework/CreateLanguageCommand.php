@@ -87,8 +87,8 @@ class CreateLanguageCommand extends Command
     /**
      * Gets the destenation file.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource $resource
-     * @param string                                   $modelName
+     * @param \Renepardon\CodeGenerator\Models\Resource $resource
+     * @param string                                    $modelName
      *
      * @return array
      */
@@ -181,7 +181,7 @@ class CreateLanguageCommand extends Command
     /**
      * Gets a singleton instance of a translator based ont he current framework's version.
      *
-     * @return Renepardon\CodeGenerator\Support\RenepardonTranslator | Illuminate\Translation\Translator
+     * @return \Renepardon\CodeGenerator\Support\RenepardonTranslator | Illuminate\Translation\Translator
      */
     protected function getTranslator()
     {
@@ -191,7 +191,7 @@ class CreateLanguageCommand extends Command
     /**
      * Get file ready message.
      *
-     * @param Renepardon\CodeGenerator\Models\Label
+     * @param \Renepardon\CodeGenerator\Models\Label
      *
      * @return string
      */

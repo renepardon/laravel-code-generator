@@ -72,7 +72,7 @@ class MigrationCapsule implements JsonWriter, ChangeDetector
     /**
      * The resources associated with the migration
      *
-     * @var Renepardon\CodeGenerator\Models\Resource
+     * @var \Renepardon\CodeGenerator\Models\Resource
      */
     public $resource;
 
@@ -131,7 +131,7 @@ class MigrationCapsule implements JsonWriter, ChangeDetector
      *
      * @param string $name
      *
-     * @return Renepardon\CodeGenerator\Models\MigrationCapsule
+     * @return \Renepardon\CodeGenerator\Models\MigrationCapsule
      */
     public static function get($name)
     {

@@ -33,8 +33,8 @@ class FieldOptimizer
     /**
      * Create a new optemizer instance.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param array                                 $meta
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param array                                  $meta
      *
      * @return void
      */
@@ -48,7 +48,7 @@ class FieldOptimizer
     /**
      * Gets the optimized field.
      *
-     * @return Renepardon\CodeGenerator\Models\Field
+     * @return \Renepardon\CodeGenerator\Models\Field
      */
     public function getField()
     {
@@ -143,7 +143,7 @@ class FieldOptimizer
      * Ensure, the datatype is set to be valid otherwise make it "int".
      * It also make sure the primary column does not appears on the views unless it specified
      *
-     * @param Renepardon\CodeGenerator\Models\Field $this ->field
+     * @param \Renepardon\CodeGenerator\Models\Field $this ->field
      *
      * @return $this
      */

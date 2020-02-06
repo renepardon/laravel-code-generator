@@ -21,8 +21,8 @@ class FieldMapper
     /**
      * Creates a new field instance.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param array                                 $meta
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param array                                  $meta
      *
      * @return void
      */

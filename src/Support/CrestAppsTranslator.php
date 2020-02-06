@@ -10,7 +10,7 @@ class RenepardonTranslator extends Translator
     /**
      * Adds a new instance of lcg_translator to the IoC container,
      *
-     * @return Renepardon\CodeGenerator\Support\RenepardonTranslator
+     * @return \Renepardon\CodeGenerator\Support\RenepardonTranslator
      */
     public static function getTranslator()
     {

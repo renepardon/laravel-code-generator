@@ -72,7 +72,7 @@ class StandardHtml extends HtmlGeneratorBase
     /**
      * Get the placeholder attribute.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $placeholder
+     * @param \Renepardon\CodeGenerator\Models\Label $placeholder
      *
      * @return string
      */
@@ -88,8 +88,8 @@ class StandardHtml extends HtmlGeneratorBase
     /**
      * Get the placeholder attribute for a menu.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $placeholder
-     * @param string                                $name
+     * @param \Renepardon\CodeGenerator\Models\Label $placeholder
+     * @param string                                 $name
      *
      * @return string
      */
@@ -157,7 +157,7 @@ class StandardHtml extends HtmlGeneratorBase
     /**
      * It gets converts an array to a stringbase array for the views.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return string
      */
@@ -175,8 +175,8 @@ class StandardHtml extends HtmlGeneratorBase
     /**
      * Gets a plain title from a given label.
      *
-     * @param Renepardon\CodeGenerator\Models\Label $label
-     * @param bool                                  $raw
+     * @param \Renepardon\CodeGenerator\Models\Label $label
+     * @param bool                                   $raw
      *
      * @return string
      */
@@ -294,8 +294,8 @@ class StandardHtml extends HtmlGeneratorBase
     /**
      * Creates html label.
      *
-     * @param string                                $name
-     * @param Renepardon\CodeGenerator\Models\Label $label
+     * @param string                                 $name
+     * @param \Renepardon\CodeGenerator\Models\Label $label
      *
      * @return string
      */
@@ -324,7 +324,7 @@ class StandardHtml extends HtmlGeneratorBase
     /**
      * Gets an instance of ViewLabelsGenerator
      *
-     * @return Renepardon\CodeGenerator\Support\ViewLabelsGenerator
+     * @return \Renepardon\CodeGenerator\Support\ViewLabelsGenerator
      */
     protected function getViewLabelsGenerator()
     {

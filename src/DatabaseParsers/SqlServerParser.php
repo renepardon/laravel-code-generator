@@ -136,8 +136,8 @@ class SqlServerParser extends ParserBase
     /**
      * Set the html type for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $type
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $type
      *
      * @return $this
      */
@@ -165,8 +165,8 @@ class SqlServerParser extends ParserBase
     /**
      * Set the labels for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $name
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $name
      *
      * @return $this
      */
@@ -190,9 +190,9 @@ class SqlServerParser extends ParserBase
     /**
      * Set the keys for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $key
-     * @param string                                $extra
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $key
+     * @param string                                 $extra
      *
      * @return $this
      */
@@ -222,8 +222,8 @@ class SqlServerParser extends ParserBase
     /**
      * Set the data type for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $type
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $type
      *
      * @return $this
      */
@@ -251,8 +251,8 @@ class SqlServerParser extends ParserBase
     /**
      * Set the default value for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $default
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $default
      *
      * @return $this
      */
@@ -268,8 +268,8 @@ class SqlServerParser extends ParserBase
     /**
      * Set the max length for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $length
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $length
      *
      * @return $this
      */
@@ -286,8 +286,8 @@ class SqlServerParser extends ParserBase
     /**
      * Set the nullable for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $nullable
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $nullable
      *
      * @return $this
      */
@@ -301,8 +301,8 @@ class SqlServerParser extends ParserBase
     /**
      * Set the unsiged flag for a given field.
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param string                                $type
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $type
      *
      * @return $this
      */

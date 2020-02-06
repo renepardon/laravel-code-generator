@@ -151,7 +151,7 @@ class CreateMigrationCommand extends MigrationCommandBase
      *
      * @throws Exception
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     protected function getCurrentResource($resourceFile)
     {
@@ -167,9 +167,9 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Gets a new migration capsule
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput $input
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput $input
      *
-     * @return Renepardon\CodeGenerator\Models\MigrationTrackerCapsule
+     * @return \Renepardon\CodeGenerator\Models\MigrationTrackerCapsule
      */
     protected function getMigrationTrackerCapsule(MigrationInput $input)
     {
@@ -179,12 +179,12 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Make a migration capsule
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput $input
-     * @param Renepardon\CodeGenerator\Models\Resource       $resource
-     * @param string                                         $name
-     * @param bool                                           $isCreate
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput $input
+     * @param \Renepardon\CodeGenerator\Models\Resource       $resource
+     * @param string                                          $name
+     * @param bool                                            $isCreate
      *
-     * @return Renepardon\CodeGenerator\Models\MigrationCapsule
+     * @return \Renepardon\CodeGenerator\Models\MigrationCapsule
      */
     protected function getMigrationCapsule(MigrationInput $input, $resource, $name, $isCreate = true)
     {
@@ -221,8 +221,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Make a create migration
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput   $input
-     * @param Renepardon\CodeGenerator\Models\MigrationCapsule $migration
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput   $input
+     * @param \Renepardon\CodeGenerator\Models\MigrationCapsule $migration
      *
      * @return void
      */
@@ -242,8 +242,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Creates the table properties.
      *
-     * @param Renepardon\CodeGenerator\Models\Resource       $resource
-     * @param Renepardon\CodeGenerator\Models\MigrationInput $input
+     * @param \Renepardon\CodeGenerator\Models\Resource       $resource
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput $input
      *
      * @return string
      */
@@ -323,8 +323,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds 'onUpdate' eloquent method to a given properties.
      *
-     * @param string                                            $properties
-     * @param Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
+     * @param string                                             $properties
+     * @param \Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
      *
      * @return $this
      */
@@ -353,8 +353,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds 'onDelete' eloquent method to a given properties.
      *
-     * @param string                                            $properties
-     * @param Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
+     * @param string                                             $properties
+     * @param \Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
      *
      * @return $this
      */
@@ -370,8 +370,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds 'on' eloquent method to a given properties.
      *
-     * @param string                                            $properties
-     * @param Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
+     * @param string                                             $properties
+     * @param \Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
      *
      * @return $this
      */
@@ -385,8 +385,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds 'references' eloquent method to a given properties.
      *
-     * @param string                                            $properties
-     * @param Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
+     * @param string                                             $properties
+     * @param \Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
      *
      * @return $this
      */
@@ -400,8 +400,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds 'foreign' eloquent method to a given properties.
      *
-     * @param string                                            $properties
-     * @param Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
+     * @param string                                             $properties
+     * @param \Renepardon\CodeGenerator\Models\ForeignConstraint $constraint
      *
      * @return $this
      */
@@ -512,8 +512,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds the field's "unique" value to the given property.
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */
@@ -529,8 +529,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds the field's "index" value to the given property.
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */
@@ -546,8 +546,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds the field's "nullable" value to the given property.
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */
@@ -563,8 +563,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds the field's "unsigned" value to the given property.
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */
@@ -580,8 +580,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds the field's "comment" value to the given property.
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */
@@ -597,8 +597,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds a 'field type' to the property
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */
@@ -614,7 +614,7 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Constructs the second parameter to the type method
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return string
      */
@@ -632,7 +632,7 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Constructs the second parameter to the enum type method
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return string
      */
@@ -715,8 +715,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds the table's "primary column" to the given property.
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */
@@ -777,8 +777,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Gets a list of all column that are used in the given migration
      *
-     * @param Renepardon\CodeGenerator\Models\Resource       $resource
-     * @param Renepardon\CodeGenerator\Models\MigrationInput $input
+     * @param \Renepardon\CodeGenerator\Models\Resource       $resource
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput $input
      *
      * @return string
      */
@@ -840,7 +840,7 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Constructs the schema up command.
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput $input
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput $input
      *
      * @return string
      */
@@ -913,7 +913,7 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Constructs the schema down command.
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput $input
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput $input
      *
      * @return string
      */
@@ -930,9 +930,9 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Make an alter migration
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput         $input
-     * @param Renepardon\CodeGenerator\Models\MigrationCapsule       $migration
-     * @param Renepardon\CodeGenerator\Models\MigrationChangeCapsule $changeCapsule
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput         $input
+     * @param \Renepardon\CodeGenerator\Models\MigrationCapsule       $migration
+     * @param \Renepardon\CodeGenerator\Models\MigrationChangeCapsule $changeCapsule
      *
      * @return void
      */
@@ -955,8 +955,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Creates the table properties.
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput         $input
-     * @param Renepardon\CodeGenerator\Models\MigrationChangeCapsule $changeCapsule
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput         $input
+     * @param \Renepardon\CodeGenerator\Models\MigrationChangeCapsule $changeCapsule
      *
      * @return string
      */
@@ -1085,8 +1085,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds an index
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Index $index
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Index $index
      *
      * @return $this
      */
@@ -1100,8 +1100,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * drop an index
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Index $index
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Index $index
      *
      * @return $this
      */
@@ -1115,8 +1115,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Get the schema down blueprint for alter command.
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput         $input
-     * @param Renepardon\CodeGenerator\Models\MigrationChangeCapsule $changeCapsule
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput         $input
+     * @param \Renepardon\CodeGenerator\Models\MigrationChangeCapsule $changeCapsule
      *
      * @return string
      */
@@ -1203,8 +1203,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Constructs the schema down command.
      *
-     * @param Renepardon\CodeGenerator\Models\MigrationInput $input
-     * @param string                                         $blueprintBody
+     * @param \Renepardon\CodeGenerator\Models\MigrationInput $input
+     * @param string                                          $blueprintBody
      *
      * @return string
      */
@@ -1223,8 +1223,8 @@ class CreateMigrationCommand extends MigrationCommandBase
     /**
      * Adds the field's "default" value to the given property.
      *
-     * @param string                                $property
-     * @param Renepardon\CodeGenerator\Models\Field $field
+     * @param string                                 $property
+     * @param \Renepardon\CodeGenerator\Models\Field $field
      *
      * @return $this
      */

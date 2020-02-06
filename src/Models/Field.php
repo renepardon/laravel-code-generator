@@ -2,9 +2,8 @@
 
 namespace Renepardon\CodeGenerator\Models;
 
-use App;
 use Exception;
-use Renepardon\CodeGenerator\Models\ForeignRelationhip;
+use Illuminate\Support\Facades\App;
 use Renepardon\CodeGenerator\Support\Arr;
 use Renepardon\CodeGenerator\Support\Config;
 use Renepardon\CodeGenerator\Support\Contracts\JsonWriter;
@@ -362,13 +361,13 @@ class Field implements JsonWriter
     /**
      * The foreign relations
      *
-     * @var Renepardon\CodeGenerator\Models\ForeignRelationhip
+     * @var \Renepardon\CodeGenerator\Models\ForeignRelationship
      */
     private $foreignRelation;
     /**
      * The foreign Constraint.
      *
-     * @var Renepardon\CodeGenerator\Models\ForeignConstraint
+     * @var \Renepardon\CodeGenerator\Models\ForeignRelationship
      */
     private $foreignConstraint;
     /**
@@ -401,6 +400,7 @@ class Field implements JsonWriter
      * @param string $localeGroup
      *
      * @return $this
+     * @throws \Exception
      */
     public static function fromArray(array $properties, $localeGroup)
     {
@@ -411,7 +411,6 @@ class Field implements JsonWriter
         }
 
         $field = new self($fieldName, $localeGroup);
-
         $field->setPredefindProperties($properties)
             ->setLabelsProperty($properties)
             ->setApiDescriptionProperty($properties)
@@ -539,8 +538,8 @@ class Field implements JsonWriter
     /**
      * It set the placeholder property for a given field
      *
-     * @param Renepardon\CodeGenerator\Models\Field $field
-     * @param array                                 $properties
+     * @param \Renepardon\CodeGenerator\Models\Field $field
+     * @param array                                  $properties
      *
      * @return $this
      */
@@ -614,6 +613,36 @@ class Field implements JsonWriter
     }
 
     /**
+     * Gets the field Id.
+     *
+     * @param string $optionValue
+     *
+     * @return string
+     */
+    protected function getFieldId($optionValue = null)
+    {
+        if (! is_null($optionValue)) {
+            return sprintf('%s_%s', $this->name, $this->cleanValue($optionValue));
+        }
+
+        return $this->name;
+    }
+
+    /**
+     * It makes a string "id-ready" string
+     *
+     * @param string $optionValue
+     *
+     * @return string
+     */
+    protected function cleanValue($optionValue)
+    {
+        $value = strtolower(str_replace(' ', '_', $optionValue));
+
+        return Str::removeNonEnglishChars($value);
+    }
+
+    /**
      * It set the validationRules property for a given field
      *
      * @param array $properties
@@ -680,6 +709,52 @@ class Field implements JsonWriter
         }
 
         return $this;
+    }
+
+    /**
+     * Checks if this field is boolean type.
+     *
+     * @return bool
+     */
+    public function isBoolean()
+    {
+        return $this->getEloquentDataMethod() == 'boolean';
+    }
+
+    /**
+     * Gets Eloquent's method name
+     *
+     * @return string
+     */
+    public function getEloquentDataMethod()
+    {
+        $map = Config::dataTypeMap();
+
+        if (isset($map[$this->dataType])) {
+            return $map[$this->dataType];
+        }
+
+        return 'string';
+    }
+
+    /**
+     * It checks whether the field is a file or not.
+     *
+     * @return boolean
+     */
+    public function isFile()
+    {
+        return ($this->htmlType == 'file');
+    }
+
+    /**
+     * Check is the field has multiple answers
+     *
+     * @return bool
+     */
+    public function isMultipleAnswers()
+    {
+        return in_array($this->htmlType, $this->multipleAnswerTypes) && ! $this->isBoolean();
     }
 
     /**
@@ -848,6 +923,20 @@ class Field implements JsonWriter
     }
 
     /**
+     * Gets method's parameter for a given index.
+     *
+     * @return mix (int|null)
+     */
+    protected function getMethodParam($index)
+    {
+        if (isset($this->methodParams[$index]) && ($value = intval($this->methodParams[$index])) > 0) {
+            return $value;
+        }
+
+        return null;
+    }
+
+    /**
      * Sets the foreign key for a given field
      *
      * @param array $properties
@@ -872,7 +961,7 @@ class Field implements JsonWriter
      *
      * @param array $properties
      *
-     * @return null || Renepardon\CodeGenerator\Models\ForeignConstraint
+     * @return null || \Renepardon\CodeGenerator\Models\ForeignConstraint
      */
     protected function getForeignConstraintFromArray(array $properties)
     {
@@ -895,6 +984,26 @@ class Field implements JsonWriter
         return Arr::isKeyExists($properties, 'foreign-constraint')
             && is_array($properties['foreign-constraint'])
             && Arr::isKeyExists($properties['foreign-constraint'], 'field', 'references', 'on');
+    }
+
+    /**
+     * Checks if the field has a foreign relation.
+     *
+     * @return bool
+     */
+    public function hasForeignConstraint()
+    {
+        return ! is_null($this->foreignConstraint);
+    }
+
+    /**
+     * Checks if the field has a foreign relation.
+     *
+     * @return bool
+     */
+    public function hasForeignRelation()
+    {
+        return ! is_null($this->foreignRelation);
     }
 
     /**
@@ -1190,6 +1299,16 @@ class Field implements JsonWriter
     }
 
     /**
+     * Gets the options for this field
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    /**
      * Checks if the field is a header or not
      *
      * @return bool
@@ -1214,7 +1333,7 @@ class Field implements JsonWriter
      *
      * @param string $lang
      *
-     * @return Renepardon\CodeGenerator\Models\Label
+     * @return \Renepardon\CodeGenerator\Models\Label
      */
     public function getLabel($lang = null)
     {
@@ -1240,7 +1359,7 @@ class Field implements JsonWriter
     /**
      * Gets the first available label if any.
      *
-     * @return Renepardon\CodeGenerator\Models\Label
+     * @return \Renepardon\CodeGenerator\Models\Label
      */
     public function getFirstLabel()
     {
@@ -1252,7 +1371,7 @@ class Field implements JsonWriter
      *
      * @param string $lang
      *
-     * @return Renepardon\CodeGenerator\Models\Label
+     * @return \Renepardon\CodeGenerator\Models\Label
      */
     public function getPlaceholder($lang = null)
     {
@@ -1268,7 +1387,7 @@ class Field implements JsonWriter
     /**
      * Gets the first available placeholder if any.
      *
-     * @return Renepardon\CodeGenerator\Models\Label | null
+     * @return \Renepardon\CodeGenerator\Models\Label | null
      */
     public function getFirstPlaceholder()
     {
@@ -1341,16 +1460,6 @@ class Field implements JsonWriter
     }
 
     /**
-     * Checks if the field has a foreign relation.
-     *
-     * @return bool
-     */
-    public function hasForeignRelation()
-    {
-        return ! is_null($this->foreignRelation);
-    }
-
-    /**
      * Checks if the field is on a given view.
      *
      * @return bool
@@ -1369,7 +1478,7 @@ class Field implements JsonWriter
     /**
      * Gets the field's foreign relationship.
      *
-     * @return Renepardon\CodeGenerator\Models\ForeignRelationhip
+     * @return \Renepardon\CodeGenerator\Models\ForeignRelationship
      */
     public function getForeignRelation()
     {
@@ -1379,39 +1488,13 @@ class Field implements JsonWriter
     /**
      * Sets the foreign relationship of the field.
      *
-     * @param Renepardon\CodeGenerator\Models\ForeignRelationship $relation
+     * @param \Renepardon\CodeGenerator\Models\ForeignRelationship $relation
      *
      * @return void
      */
     public function setForeignRelation(ForeignRelationship $relation = null)
     {
         $this->foreignRelation = $relation;
-    }
-
-    /**
-     * Checks if this field is boolean type.
-     *
-     * @return bool
-     */
-    public function isBoolean()
-    {
-        return $this->getEloquentDataMethod() == 'boolean';
-    }
-
-    /**
-     * Gets Eloquent's method name
-     *
-     * @return string
-     */
-    public function getEloquentDataMethod()
-    {
-        $map = Config::dataTypeMap();
-
-        if (isset($map[$this->dataType])) {
-            return $map[$this->dataType];
-        }
-
-        return 'string';
     }
 
     /**
@@ -1463,46 +1546,6 @@ class Field implements JsonWriter
     }
 
     /**
-     * Gets the options for this field
-     *
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
-    /**
-     * Gets the field Id.
-     *
-     * @param string $optionValue
-     *
-     * @return string
-     */
-    protected function getFieldId($optionValue = null)
-    {
-        if (! is_null($optionValue)) {
-            return sprintf('%s_%s', $this->name, $this->cleanValue($optionValue));
-        }
-
-        return $this->name;
-    }
-
-    /**
-     * It makes a string "id-ready" string
-     *
-     * @param string $optionValue
-     *
-     * @return string
-     */
-    protected function cleanValue($optionValue)
-    {
-        $value = strtolower(str_replace(' ', '_', $optionValue));
-
-        return Str::removeNonEnglishChars($value);
-    }
-
-    /**
      * Gets the false label for the boolean field.
      *
      * @return mix(null | restApps\CodeGenerator\Models\Label)
@@ -1520,26 +1563,6 @@ class Field implements JsonWriter
         }
 
         return new Label('No', $this->localeGroup, true, 'en', $this->getFieldId(0), 0);
-    }
-
-    /**
-     * Check is the field has multiple answers
-     *
-     * @return bool
-     */
-    public function isMultipleAnswers()
-    {
-        return in_array($this->htmlType, $this->multipleAnswerTypes) && ! $this->isBoolean();
-    }
-
-    /**
-     * It checks whether the field is a file or not.
-     *
-     * @return boolean
-     */
-    public function isFile()
-    {
-        return ($this->htmlType == 'file');
     }
 
     /**
@@ -1758,19 +1781,9 @@ class Field implements JsonWriter
     }
 
     /**
-     * Checks if the field has a foreign relation.
-     *
-     * @return bool
-     */
-    public function hasForeignConstraint()
-    {
-        return ! is_null($this->foreignConstraint);
-    }
-
-    /**
      * Gets the field's foreign key.
      *
-     * @return Renepardon\CodeGenerator\Models\ForeignConstraint
+     * @return \Renepardon\CodeGenerator\Models\ForeignConstraint
      */
     public function getForeignConstraint()
     {
@@ -1780,7 +1793,7 @@ class Field implements JsonWriter
     /**
      * Sets the foreign key of the field.
      *
-     * @param Renepardon\CodeGenerator\Models\ForeignConstraint $foreignConstraint
+     * @param \Renepardon\CodeGenerator\Models\ForeignConstraint $foreignConstraint
      *
      * @return void
      */
@@ -1900,19 +1913,5 @@ class Field implements JsonWriter
         }
 
         return 0;
-    }
-
-    /**
-     * Gets method's parameter for a given index.
-     *
-     * @return mix (int|null)
-     */
-    protected function getMethodParam($index)
-    {
-        if (isset($this->methodParams[$index]) && ($value = intval($this->methodParams[$index])) > 0) {
-            return $value;
-        }
-
-        return null;
     }
 }

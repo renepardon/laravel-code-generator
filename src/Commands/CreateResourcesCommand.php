@@ -89,7 +89,7 @@ class CreateResourcesCommand extends Command
     /**
      * Gets a clean user inputs.
      *
-     * @return Renepardon\CodeGenerator\Models\ResourceInput
+     * @return \Renepardon\CodeGenerator\Models\ResourceInput
      */
     protected function getCommandInput()
     {
@@ -126,7 +126,7 @@ class CreateResourcesCommand extends Command
     /**
      * Executes the command that generate fields' file.
      *
-     * @param Renepardon\CodeGenerator\Models\ResourceInput $input
+     * @param \Renepardon\CodeGenerator\Models\ResourceInput $input
      *
      * @return $this
      */
@@ -150,7 +150,7 @@ class CreateResourcesCommand extends Command
     /**
      * Executes the command that generates a migration.
      *
-     * @param Renepardon\CodeGenerator\Models\ResourceInput $input
+     * @param \Renepardon\CodeGenerator\Models\ResourceInput $input
      *
      * @return $this
      */
@@ -180,7 +180,7 @@ class CreateResourcesCommand extends Command
     /**
      * Executes the command that generates all the views.
      *
-     * @param Renepardon\CodeGenerator\Models\ResourceInput $input
+     * @param \Renepardon\CodeGenerator\Models\ResourceInput $input
      *
      * @return $this
      */
@@ -207,7 +207,7 @@ class CreateResourcesCommand extends Command
     /**
      * Executes the command that generates a language files.
      *
-     * @param Renepardon\CodeGenerator\Models\ResourceInput $input
+     * @param \Renepardon\CodeGenerator\Models\ResourceInput $input
      *
      * @return $this
      */
@@ -232,7 +232,7 @@ class CreateResourcesCommand extends Command
     /**
      * Executes the command that generates the routes.
      *
-     * @param Renepardon\CodeGenerator\Models\ResourceInput $input
+     * @param \Renepardon\CodeGenerator\Models\ResourceInput $input
      *
      * @return $this
      */
@@ -255,7 +255,7 @@ class CreateResourcesCommand extends Command
     /**
      * Executes the command that generates the controller.
      *
-     * @param Renepardon\CodeGenerator\Models\ResourceInput $input
+     * @param \Renepardon\CodeGenerator\Models\ResourceInput $input
      *
      * @return $this
      */
@@ -291,7 +291,7 @@ class CreateResourcesCommand extends Command
     /**
      * Executes the command that generates a model.
      *
-     * @param Renepardon\CodeGenerator\Models\ResourceInput $input
+     * @param \Renepardon\CodeGenerator\Models\ResourceInput $input
      *
      * @return $this
      */

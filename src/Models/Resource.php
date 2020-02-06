@@ -108,7 +108,7 @@ class Resource implements JsonWriter
      * @param string      $localeGroup
      * @param array       $languages
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     public static function fromFile($filename, $localeGroup, array $languages = [])
     {
@@ -142,7 +142,7 @@ class Resource implements JsonWriter
      * @param string      $localeGroup
      * @param array       $languages
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     public static function fromJson($json, $localeGroup, array $languages = [])
     {
@@ -168,7 +168,7 @@ class Resource implements JsonWriter
      * @param string $localeGroup
      * @param array  $languages
      *
-     * @return Renepardon\CodeGenerator\Models\Resource
+     * @return \Renepardon\CodeGenerator\Models\Resource
      */
     public static function fromArray(array $properties, $localeGroup, array $languages = [])
     {
@@ -297,6 +297,19 @@ class Resource implements JsonWriter
     }
 
     /**
+     * Adds the given key and value to the apiDocumentationLabels collection
+     *
+     * @param string $key
+     * @param mix (string|array) $text
+     *
+     * @return void
+     */
+    public function addApiDocLabel($text, $localeGroup, $key, $isPlain = true, $lang = 'en')
+    {
+        $this->apiDocumentationLabels[$lang][] = new Label($text, $localeGroup, $isPlain, $lang, $key);
+    }
+
+    /**
      * Checks if the resource is empty.
      *
      * @return bool
@@ -309,7 +322,7 @@ class Resource implements JsonWriter
     /**
      * Get the first header field if available
      *
-     * @return min (null | Renepardon\CodeGenerator\Models\Field)
+     * @return min (null | \Renepardon\CodeGenerator\Models\Field)
      */
     public function getHeaderField()
     {
@@ -335,7 +348,7 @@ class Resource implements JsonWriter
     /**
      * Get the first primary field if available
      *
-     * @return mix (null | Renepardon\CodeGenerator\Models\Field)
+     * @return mix (null | \Renepardon\CodeGenerator\Models\Field)
      */
     public function getPrimaryField()
     {
@@ -486,19 +499,6 @@ class Resource implements JsonWriter
         }
 
         return $this;
-    }
-
-    /**
-     * Adds the given key and value to the apiDocumentationLabels collection
-     *
-     * @param string $key
-     * @param mix (string|array) $text
-     *
-     * @return void
-     */
-    public function addApiDocLabel($text, $localeGroup, $key, $isPlain = true, $lang = 'en')
-    {
-        $this->apiDocumentationLabels[$lang][] = new Label($text, $localeGroup, $isPlain, $lang, $key);
     }
 
     /**

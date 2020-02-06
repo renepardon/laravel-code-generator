@@ -389,7 +389,7 @@ class Field implements JsonWriter
     {
         $this->name = $name;
         $this->localeGroup = $localeGroup;
-        $this->defaultLang = App::getLocale();
+        $this->defaultLang = app('locale');
     }
 
     /**

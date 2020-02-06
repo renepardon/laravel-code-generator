@@ -72,7 +72,7 @@ trait Migration
      */
     protected function setMigrator()
     {
-        $this->migrator = App::make('migrator');
+        $this->migrator = app('migrator');
     }
 
     /**

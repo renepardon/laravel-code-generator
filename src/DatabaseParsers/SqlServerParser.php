@@ -51,7 +51,7 @@ class SqlServerParser extends ParserBase
     {
         $this->tableName = $tableName;
         $this->databaseName = $databaseName;
-        $this->locale = App::getLocale();
+        $this->locale = app('locale');
     }
 
     /**

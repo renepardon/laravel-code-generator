@@ -62,7 +62,8 @@ class ViewLabelsGenerator
         $this->modelName = $modelName;
         $this->fields = $fields;
         $this->localeGroup = self::makeLocaleGroup($modelName);
-        $this->defaultLang = app('locale');
+        $locale = app('locale');
+        $this->defaultLang = $locale->parseLocale($locale->getDefault())['language'];
         $this->isCollectiveTemplate = $isCollectiveTemplate;
     }
 

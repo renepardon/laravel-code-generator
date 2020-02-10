@@ -4,7 +4,6 @@ namespace Renepardon\CodeGenerator\Models;
 
 class Label
 {
-
     /**
      * The label's text
      *
@@ -22,7 +21,7 @@ class Label
     /**
      * Is the label plain text or not
      *
-     * @var vool
+     * @var bool
      */
     public $isPlain = true;
 
@@ -48,7 +47,7 @@ class Label
     public $id;
 
     /**
-     * The template to use for replacment.
+     * The template to use for replacement.
      *
      * @var string
      */
@@ -75,8 +74,14 @@ class Label
      *
      * @return void
      */
-    public function __construct($text, $localeGroup, $isPlain = true, $lang = 'en', $id = null, $value = null)
-    {
+    public function __construct(
+        string $text,
+        string $localeGroup,
+        bool $isPlain = true,
+        string $lang = 'en',
+        string $id = null,
+        string $value = null
+    ) {
         $this->text = $text;
         $this->localeGroup = $localeGroup;
         $this->isPlain = $isPlain;

@@ -35,7 +35,7 @@ class FieldsOptimizer
     /**
      * Gets the optimized fields.
      *
-     * @return \Renepardon\CodeGenerator\Models\Field
+     * @return \Renepardon\CodeGenerator\Models\Field[]
      */
     public function getFields()
     {
@@ -45,7 +45,7 @@ class FieldsOptimizer
     /**
      * Optemizes the fields.
      *
-     * @return void
+     * @return $this
      */
     public function optimize()
     {

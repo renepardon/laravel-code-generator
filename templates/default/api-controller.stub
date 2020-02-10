@@ -25,7 +25,24 @@ class [% controller_name %] [% controller_extends %]
      */
     public function index()
     {
+        /** @var \Illuminate\Pagination\LengthAwarePaginator $[% model_name_plural_variable %] */
         $[% model_name_plural_variable %] = [% model_name_class %]::[% with_relations_for_index %]paginate([% models_per_page %]);
+
+        [% index_return_success %]
+    }
+
+    /**
+     * Display listing of the assets for all provided id's
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @Operation(id="ListMultiple[% model_name_class %]")
+     * @Response(factory="List[% model_name_class %]Response")
+     */
+    public function multipleByIdList()
+    {
+        /** @var \Illuminate\Pagination\LengthAwarePaginator $[% model_name_plural_variable %] */
+        $[% model_name_plural_variable %] = [% model_name_class %]::[% with_relations_for_index %]whereIn('id', $request->get('id', []))->paginate([% models_per_page %]);
 
         [% index_return_success %]
     }

@@ -167,6 +167,7 @@ class FieldTransformer
      * It transfres the raw fields into Fields by setting the $this->fields array
      *
      * @return $this
+     * @throws \Exception
      */
     protected function transfer()
     {
@@ -190,7 +191,7 @@ class FieldTransformer
                     ->setOptions($properties);
             }
 
-            $field = Field::fromArray($properties, $this->localeGroup, $this->languages);
+            $field = Field::fromArray($properties, $this->localeGroup);
 
             $mappers[] = new FieldMapper($field, (array)$rawField);
         }

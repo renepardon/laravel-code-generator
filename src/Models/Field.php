@@ -3,7 +3,6 @@
 namespace Renepardon\CodeGenerator\Models;
 
 use Exception;
-use Illuminate\Support\Facades\App;
 use Renepardon\CodeGenerator\Support\Arr;
 use Renepardon\CodeGenerator\Support\Config;
 use Renepardon\CodeGenerator\Support\Contracts\JsonWriter;
@@ -389,7 +388,8 @@ class Field implements JsonWriter
     {
         $this->name = $name;
         $this->localeGroup = $localeGroup;
-        $this->defaultLang = app('locale');
+        $locale = app('locale');
+        $this->defaultLang = $locale->parseLocale($locale->getDefault())['language'];
     }
 
     /**
@@ -582,9 +582,9 @@ class Field implements JsonWriter
      *
      * @param array $items
      *
-     * @return $this
+     * @return array
      */
-    protected function getLabelsFromArray(array $items)
+    protected function getLabelsFromArray(array $items): array
     {
         $labels = [];
 
@@ -1225,9 +1225,11 @@ class Field implements JsonWriter
      * @param array $properties
      *
      * @return $this
+     * @throws \Exception
      */
     protected function setLabelsProperty(array $properties)
     {
+        /** @var \Renepardon\CodeGenerator\Models\Label $labels */
         $labels = $this->getLabelsFromProperties($properties);
 
         foreach ($labels as $label) {
@@ -1243,6 +1245,7 @@ class Field implements JsonWriter
      * @param array $properties
      *
      * @return array
+     * @throws \Exception
      */
     protected function getLabelsFromProperties(array $properties)
     {
@@ -1268,7 +1271,7 @@ class Field implements JsonWriter
      *
      * @return void
      */
-    public function addLabel($text, $isPlain = true, $lang = 'en')
+    public function addLabel(string $text, bool $isPlain = true, string $lang = 'en'): void
     {
         $this->labels[$lang] = new Label($text, $this->localeGroup, $isPlain, $lang, $this->name);
     }
@@ -1580,7 +1583,7 @@ class Field implements JsonWriter
      *
      * @return array
      */
-    public function getValidationRule()
+    public function getValidationRule(): array
     {
         return $this->validationRules ?: [];
     }
@@ -1590,7 +1593,7 @@ class Field implements JsonWriter
      *
      * @return array
      */
-    public function getValidationRules()
+    public function getValidationRules(): array
     {
         return $this->validationRules ?: [];
     }
@@ -1674,7 +1677,9 @@ class Field implements JsonWriter
     /**
      * Gets current labels in a raw format.
      *
-     * @return mix (string|object)
+     * @param \Renepardon\CodeGenerator\Models\Label[] $labels
+     *
+     * @return string|object
      */
     protected function labelsToRaw(array $labels)
     {
@@ -1694,7 +1699,7 @@ class Field implements JsonWriter
     /**
      * Gets the field labels.
      *
-     * @return array
+     * @return \Renepardon\CodeGenerator\Models\Label[]
      */
     public function getLabels()
     {
